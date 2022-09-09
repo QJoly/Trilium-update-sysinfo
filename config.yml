@@ -1,0 +1,7 @@
+--- 
+
+server:
+  token: PLACE_HERE_UR_ETAPI_TOKEN
+  url: https://ur_server:8080
+
+---
