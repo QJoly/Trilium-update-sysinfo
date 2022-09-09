@@ -1,0 +1,1 @@
+# trilium-update-server-data
