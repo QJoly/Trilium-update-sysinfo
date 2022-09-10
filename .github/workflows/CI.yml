@@ -1,0 +1,34 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  CI:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Find and Replace
+        uses: jacobtomlinson/gha-find-replace@v2
+        with:
+          find: "PLACE_HERE_UR_ETAPI_TOKEN"
+          replace: "${{ secrets.ETAPITOKEN }}"
+          regex: false
+          
+      - name: Find and Replace
+        uses: jacobtomlinson/gha-find-replace@v2
+        with:
+          find: "https://ur_server:8080"
+          replace: "${{ secrets.TRILIUMURL }}"
+          regex: false
+          
+      - name: Running python
+        run: python3 start.py
