@@ -15,6 +15,7 @@ class triliuminstance:
        logging.info("Will use {} as trilium instance".format(url))
        logging.info("Trying to login...")
        self.connect()
+       logging.info("Success !")
 
     def connect(self):
         try:
@@ -22,3 +23,20 @@ class triliuminstance:
         except:
             logging.error("Can't login to trilium instance")
             sys.exit(1)
+
+    def search_note(self, research):
+        res = self.ea.search_note(search=research,)
+        for x in res['results']:
+            try:
+                logging.info("---------------------------------------------------")
+                logging.info("id: {} title: {}".format(x['noteId'], x['title']))
+                logging.info("parent id : ".format(self.ea.get_note(x['noteId'])['parentNoteIds']))
+                logging.info("---------------------------------------------------")
+            except :
+                logging.error("Can't print result : Encoding (?)")
+         # print(x['noteId'], x['title'])
+
+
+
+    def get_instance(self):
+        return self
