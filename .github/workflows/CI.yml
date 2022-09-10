@@ -33,7 +33,7 @@ jobs:
       - name: Installing libs
         uses: actions/setup-python@v4.2.0
         with:
-          python-version: 3.10
+          python-version: "3.10.7"
 
       - run: python3 -m pip install -r requirements.txt 
         
