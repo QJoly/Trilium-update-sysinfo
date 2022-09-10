@@ -31,6 +31,11 @@ jobs:
           regex: false
           
       - name: Installing libs
-        run: python3 -m pip install -r requirements.txt 
+        uses: actions/setup-python@v4.2.0
+        with:
+          python-version: "3.10.7"
+
+      - run: python3 -m pip install -r requirements.txt 
+        
       - name: Running the script
         run: python3 start.py
