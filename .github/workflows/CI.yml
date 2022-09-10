@@ -30,5 +30,7 @@ jobs:
           replace: "${{ secrets.TRILIUMURL }}"
           regex: false
           
-      - name: Running python
+      - name: Installing libs
+        run: python3 -m pip install -r requirements.txt 
+      - name: Running the script
         run: python3 start.py
