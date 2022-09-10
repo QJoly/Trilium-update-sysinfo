@@ -6,6 +6,10 @@ from trilium_py.client import ETAPI
 class triliuminstance:
     def __init__(self, url, token):
        logging.info("Instance initialization")
+       assert url != "", "Can't be empty"
+       assert url != None, "Can't be None"
+       assert token != "", "Can't be empty"
+       assert token != None, "Can't be None"
        self.url = url
        self.token = token
        logging.info("Will use {} as trilium instance".format(url))
