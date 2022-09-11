@@ -29,6 +29,13 @@ jobs:
           find: "https://ur_server:8080"
           replace: "${{ secrets.TRILIUMURL }}"
           regex: false
+
+      - name: Find and Replace
+        uses: jacobtomlinson/gha-find-replace@v2
+        with:
+          find: "NOTEID"
+          replace: "${{ secrets.NOTEID }}"
+          regex: false
           
       - name: Installing libs
         uses: actions/setup-python@v4.2.0
