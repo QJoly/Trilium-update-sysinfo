@@ -3,3 +3,7 @@
 server:
   token: PLACE_HERE_UR_ETAPI_TOKEN
   url: https://ur_server:8080
+
+noteId: "NOTEID" # Put ur noteId here
+nodeName: ""
+update_title: True
