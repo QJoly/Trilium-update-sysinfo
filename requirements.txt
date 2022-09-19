@@ -4,4 +4,4 @@ python-magic==0.4.27
 requests==2.27.1
 requestsexceptions==1.4.0
 j2cli==0.3.10
-psutil==5.9.1
+psutil==5.9.2
